@@ -9,14 +9,32 @@
 
 // Output: "Jasmine%20Ann%20Jones"
 
+const s = "Jasmine Ann Jones";
 
-const replace = (string) => {
-  if (string === "") {
-    return "";
-  } else {
-    return replace(string.subst(1)) + string[0];
+const StringToUrl = s => {
+  let returnString = '';
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === ' ') {
+      returnString += '%20';
+    } else {
+      returnString += s[i];
+    }
   }
-}
+
+  return returnString;
+};
+
+StringToUrl(s)
+
+// with recursion
+
+const StringToUrl1 = s => {
+  if (s.length === 0) {
+    return s;
+  }
+
+  return ((s[0] === ' ') ? '%20' : s[0]) + StringToUrl(s.slice(1));
+};
 
 string = "Jasmine Ann Jones"
 
@@ -26,41 +44,35 @@ string = "Jasmine Ann Jones"
 
 // Example
 // Input: [7, 9, "hi", 12, "hi" 7, 53]
-// input2 = Input
 
-// Output: [7, 9, "hi", 12, 53]
+// without recurssion 
 
-const input = [7, 9, "hi", 12, "hi", 7, 53];
+const input = [7, 9, "hi", 12, "hi", 7, 53]
 
-function remove () {
+function removeDuplicates(input) {
+  let returnArray = []
+
+  for (let i = 0; i < a.length; i++) {
+    if (returnArray.indexOf(a[i]) === -1) { // The indexOf() method returns the first index at which a given element can be found in the array, or -1 if it is not present.
+      returnArray.push(a[i])
+    }
+  }
+  return returnArray
+}
+removeDuplicates(input);
+
+
+function removeDuplicatez(input) {
 	for (i = 0; i < input.length; i++){
 		for (j = i + 1; j < input.length; j++){
 			if (input[i] == input[j]) {
 				input[i] = ""
-			} else {
-				output.push(input[i])
+			}else{
+				expectedOutput.push(input[i])
 			}
 	}
-	return output;
-  }
+	return `expectedOutput`;
 }
-
-const input2 = remove(input)
-
-
-function repeat(element) {
-  for (let i = 2; element > i; i++) {
-    if (element === element) {
-      return false;
-    }
-  }
-  return element;
-}
-
-const output1 = input.filter(repeat)
-
-output1
-
 
 
 // prompt 3
@@ -72,7 +84,25 @@ output1
 
 // Output: "3ab2c4da"
 
-const input3 = "aaabccdddda"
+const str3 = "aaabbcdddd"
+
+function stringCompression (str) {
+  if (str.length ==0 || str == Number) {
+    return `Please enter a string`;
+  }
+  let output = '';
+  let count = 0;
+  for (let i = 0; i < str.length; i++) {
+    count++;
+    if (str[i] != str[i+1]) {
+      output += str[i] + count;
+      count = 0;
+    }
+  }
+  return output;
+}
+
+stringCompression(str4);
 
 
 // prompt 4
@@ -88,15 +118,20 @@ const input3 = "aaabccdddda"
 
 // Output: true
 
-const input4 = "hello"
+const str4 = "hello"
 
-function uniqueCharacters(input4)
+function unique(str4)
 {
-  for(let i = 0; i < input4.length; i++)
-    for(let j = i + 1; j < input4.length; j++)
-      if (input4[i] == input4[j])
-        return false;
-  return true;
+  if (str == num) {
+    return `Please enter a string`;
+  } else {
+    for(let i = 0; i < str.length; i++)
+        for(let j = i + 1; j < str.length; j++)
+            if (str[i] == str[j])
+                return false;
+    return true;
+  }
+}
 }
 
-const test = uniqueCharacters(input4)
+uniqu(str4)

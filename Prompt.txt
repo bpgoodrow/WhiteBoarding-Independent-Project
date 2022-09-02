@@ -1,0 +1,29 @@
+// removes duplicates from an array
+// do not use filter() or where()
+// filter only if first solution is found
+// multiple datatypes can be present
+// use javascript 
+// remove all duplicate not just duos
+
+const input = [8, 8, 9, 1, 6]
+const input2 = [8, 9, 1, "hello", "hello]
+
+function removeDuplicates(input) {
+  let blankArray = []
+  for (let i = 0; i < input.length; i++) {
+  if (blankArray.indexOf(input[i]) === -1) {
+    blankArray.push(input[i])
+  }
+}
+return blankArray;
+}
+
+removeDuplicates(input);
+removeDuplicates(input2);
+
+
+// array different elements
+// remove duplicated elements from array
+// loop, for loop
+// blank array, push non duplicate elements into blank
+// return blankarray
