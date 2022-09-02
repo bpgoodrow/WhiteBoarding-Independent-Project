@@ -14,7 +14,7 @@ const replace = (string) => {
   if (string === "") {
     return "";
   } else {
-    return replace(string.subst(string.length)) + string[0];
+    return replace(string.subst(1)) + string[0];
   }
 }
 
@@ -30,22 +30,23 @@ string = "Jasmine Ann Jones"
 
 // Output: [7, 9, "hi", 12, 53]
 
+const input = [7, 9, "hi", 12, "hi", 7, 53];
 
-function removeDuplicates {
+function remove () {
 	for (i = 0; i < input.length; i++){
 		for (j = i + 1; j < input.length; j++){
 			if (input[i] == input[j]) {
 				input[i] = ""
-			}else{
-				expectedOutput.push(input[i])
+			} else {
+				output.push(input[i])
 			}
 	}
-	console.log(expectedOutput)
+	return output;
+  }
 }
 
+const input2 = remove(input)
 
-
-const input = [7, 9, "hi", 12, "hi", 7, 53];
 
 function repeat(element) {
   for (let i = 2; element > i; i++) {
@@ -56,9 +57,9 @@ function repeat(element) {
   return element;
 }
 
-const output = input.filter(repeat)
+const output1 = input.filter(repeat)
 
-output
+output1
 
 
 
@@ -70,6 +71,8 @@ output
 // Input: "aaabccdddda"
 
 // Output: "3ab2c4da"
+
+const input3 = "aaabccdddda"
 
 
 // prompt 4
@@ -85,3 +88,15 @@ output
 
 // Output: true
 
+const input4 = "hello"
+
+function uniqueCharacters(input4)
+{
+  for(let i = 0; i < input4.length; i++)
+    for(let j = i + 1; j < input4.length; j++)
+      if (input4[i] == input4[j])
+        return false;
+  return true;
+}
+
+const test = uniqueCharacters(input4)
